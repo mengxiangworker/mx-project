@@ -1,9 +1,14 @@
 package mx.template.login.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import mx.template.login.entity.User;
+import mx.template.login.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author peidong.meng
@@ -14,10 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class TestController {
 
+    @Autowired
+    private UserService userService;
 
-    @GetMapping("/1")
-    public void test(){
+    @GetMapping("/users")
+    public List<User> test(){
 
-        log.debug("-------");
+        log.debug("获取所有用户。。。");
+        return userService.list();
     }
 }

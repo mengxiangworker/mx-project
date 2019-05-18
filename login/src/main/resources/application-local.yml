@@ -5,6 +5,13 @@ logging:
     jrx.anyest.engine.server : debug
     org.springframework.web.servlet.mvc: debug
 
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/mx_demo?useSSL=false&characterEncoding=utf8
+    driver-class-name: com.mysql.jdbc.Driver
+#
 #spring:
 #  datasource:
 #    hikari:
@@ -16,5 +23,9 @@ logging:
 #      idle-timeout: 600000
 #      username: root
 #      password: 123456
-#      jdbc-url: jdbc:mysql://127.0.0.1:3306/mx_local?useSSL=false&characterEncoding=utf8
+#      jdbc-url: jdbc:mysql://127.0.0.1:3306/mx_demo?useSSL=false&characterEncoding=utf8
 #      driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: mx.template.login.entity

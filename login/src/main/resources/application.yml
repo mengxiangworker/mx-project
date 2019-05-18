@@ -5,7 +5,6 @@ spring:
   application:
     name: anyest-engine-server
 
-
 server:
   port: 8080
   # 下面是配置undertow作为服务器的参数
@@ -19,3 +18,10 @@ server:
     buffer-size: 1024
     # 是否分配的直接内存
     direct-buffers: true
+
+logging:
+  pattern:
+    console: '%clr(%gray(%d{yyyy-MM-dd HH:mm:ss.SSS}) - %boldRed(%5p) %blue([%5.20t]) %magenta(%-20.50logger{50}) %yellow(%2M) %green(%2L) : %msg%n)'
+  level:
+    jrx.anyest.engine.server : debug
+    org.springframework.web.servlet.mvc: debug
