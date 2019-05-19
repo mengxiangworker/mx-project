@@ -14,7 +14,7 @@ import lombok.ToString;
 public class User {
 
     private Integer id;
-    private String userName;
-    private String idCard;
+    private String user_name;
+    private String id_card;
     private String password;
 }
