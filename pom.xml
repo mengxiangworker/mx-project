@@ -53,6 +53,11 @@
                 <artifactId>lombok</artifactId>
                 <version>1.16.20</version>
             </dependency>
+            <dependency>
+                <groupId>mx.template</groupId>
+                <artifactId>base</artifactId>
+                <version>1.0.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

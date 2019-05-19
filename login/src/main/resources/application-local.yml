@@ -25,4 +25,5 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
+  config-location: classpath:mapper/autoConfiguration.xml
   type-aliases-package: mx.template.login.entity

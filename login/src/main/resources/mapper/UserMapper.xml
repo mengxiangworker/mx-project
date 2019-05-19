@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="mx.template.login.dao.UserDao" >
+<mapper namespace="mx.template.login.repository.UserRepository" >
 
+    <resultMap id="UserMap" type="User">
+        <id property="id" column="userId" />
+        <result property="realName" column="real_name"/>
+        <result property="userName" column="user_name"/>
+        <result property="txToken" column="tx_token"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="idCard" column="id_card"/>
+        <result property="uPwd" column="u_pwd"/>
+        <result property="salt" column="salt"/>
+        <result property="createTime" column="create_time" javaType="java.util.Date"/>
+    </resultMap>
 
     <sql id="BASE_TABLE">
-      user
+      user_master
     </sql>
 
     <sql id="BASE_COLUMN">
-      id,user_name,id_card,password
+      id,real_name,user_name,tx_token,phone_number,id_card,u_pwd,salt,create_time
     </sql>
 
 
-    <select id="selectAll" resultType="mx.template.login.entity.User">
+    <select id="getAll" resultMap="UserMap">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM

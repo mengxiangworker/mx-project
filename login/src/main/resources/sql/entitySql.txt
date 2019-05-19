@@ -1,0 +1,13 @@
+
+//用户主表
+CREATE table user_master(
+	id int PRIMARY KEY auto_increment,
+	real_name varchar(30),
+	user_name varchar(30),
+	id_card varchar(20),
+  tx_token varchar(50),
+	phone_number varchar(20),
+	u_pwd varchar(100),
+	salt varchar(10),
+	create_time dateTime
+)
